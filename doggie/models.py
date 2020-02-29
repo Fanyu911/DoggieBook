@@ -27,6 +27,13 @@ class Dog(models.Model):
     price = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+    slug = models.SlugField(unique=True)
+    dogcategory_slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.dog_name)
+        self.dogcategory_slug = slugify(self.dogcategory)
+        super(Dog, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.dog_name

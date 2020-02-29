@@ -27,3 +27,18 @@ def show_dogcategory(request, dogcategory_name_slug):
         context_dict['dogs'] = None
 
     return render(request, 'doggie/dogcategory.html', context=context_dict)
+
+def show_dog(request,dogcategory_name_slug, dog_name_slug):
+
+    context_dict = {}
+
+    try:
+
+        dog = Dog.objects.filter(slug=dog_name_slug)
+        context_dict['dogs'] = dog
+
+    except DogCategory.DoesNotExist:
+
+        context_dict['dogs'] = None
+
+    return render(request, 'doggie/dog.html', context=context_dict)
