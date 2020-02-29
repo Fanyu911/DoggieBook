@@ -8,22 +8,26 @@ from doggie.models import DogCategory,Dog
 def populate():
     BigDog_pages = [
         {'dog_name': 'caiquan',
-         'description':'caiquan is here',
+         'short_description':'caiquan is here',
+         'long_description':'caiquan is here',
          'body':'Big Dog',
          'price': 0
          },
          {'dog_name': 'keji',
-         'description':'keji is here',
+         'short_description':'keji is here',
+         'long_description':'caiquan is here',
          'body':'Big Dog',
           'price': 0
           } ]
     SmallDog_pages =[{'dog_name': 'xiaocaiquan',
-         'description':'xiaocaiquan is here',
+         'short_description':'keji is here',
+         'long_description':'caiquan is here',
          'body':'Small Dog',
           'price': 0
          },
          {'dog_name': 'xiaokeji',
-         'description':'xiaokeji is here',
+          'short_description':'keji is here',
+         'long_description':'caiquan is here',
          'body':'Small Dog',
          'price': 0
          } ]
@@ -35,16 +39,17 @@ def populate():
     for cat ,cat_data in cats.items():
             c = add_cat(cat)
             for r in cat_data["dogs"]:
-                    add_dog(c,r['dog_name'],r['description'],r['body'],r['price'])
+                    add_dog(c,r['dog_name'],r['short_description'],r['long_description'],r['body'],r['price'])
 
     # Print out the categories we have added.
     for c in DogCategory.objects.all():
             for p in Dog.objects.filter(dogcategory=c):
                 print(f'- {c}: {p}')
 
-def add_dog(cat,dog_name,description,body,price=0):
+def add_dog(cat,dog_name,short_description,long_description,body,price=0):
         r = Dog.objects.get_or_create(dogcategory=cat, dog_name=dog_name)[0]
-        r.description = description
+        r.short_description = short_description
+        r.long_description = long_description
         r.body = body
 
         r.price = price
@@ -62,3 +67,13 @@ def add_cat(name):
 if  __name__=='__main__':
     print('Starting Doggie population script...')
     populate()
+
+# python manage.py makemigrations doggie
+
+# python manage.py migrate
+
+# python manage.py createsuperuser
+
+# python populate_doggie.py
+
+# python manage.py runserver
