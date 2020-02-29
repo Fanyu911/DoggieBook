@@ -59,14 +59,13 @@ def populate():
             for p in Dog.objects.filter(dogcategory=c):
                 print(f'- {c}: {p}')
 
-def add_dog(cat,dog_name,short_description,long_description,life_span,price=0):
+def add_dog(cat,dog_name,short_description,long_description,life_span,views=0,price=0):
         r = Dog.objects.get_or_create(dogcategory=cat, dog_name=dog_name)[0]
         r.short_description = short_description
         r.long_description = long_description
         r.life_span= life_span
-
+        r.views=views
         r.price = price
-
         r.save()
         return r
 
