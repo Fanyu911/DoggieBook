@@ -8,12 +8,18 @@
 
     <body>
         <div>
+        {% if dog %}
+            {% for dog in dog %}
+            <li>{{ dog.dog_name}}</li>
+            <li>{{ dog.short_description}}</li>
+            <li>{{ dog.long_description}}</li>
+            <li>{{ dog.life_span}}</li>
+            <li>{{ dog.price}}</li>
 
-
-            <li>{{ dog.dog_name }}</a></li>
-
-
-
+            {% endfor %}
+        {% else %}
+                <strong>No dog!</strong>
+        {% endif %}
         </div>
 
     </body>
