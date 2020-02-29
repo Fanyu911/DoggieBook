@@ -15,9 +15,10 @@ class Dog(models.Model):
     dog_name = models.CharField(max_length=128, unique=True)
     short_description = models.CharField(max_length=1280)
     long_description = models.CharField(max_length=1280)
-    body = models.CharField(max_length=128)
+    life_span = models.CharField(max_length=128)
     price = models.IntegerField(default=0)
-
+    views = models.IntegerField(default=0)
+    likes = models.IntegerField(default=0)
 
     def __str__(self):
         return self.dog_name
