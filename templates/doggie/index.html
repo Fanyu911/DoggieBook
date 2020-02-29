@@ -17,9 +17,21 @@
         </div>
 
         <div>
+        {% if dogcategories %}
+        <ul>
+        {% for dogcategory in dogcategories %}
+            <li><a href="/doggie/dogcategory/{{ dogcategory.slug }}/">{{ dogcategory.name }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <strong>There are no dogcategories present.</strong>
+        {% endif %}
+        </div>
+
+
+        <div>
             <a href="/doggie/about/">About</a><br />
-            <--img src="{% static 'images/rango.jpg' %}"
-                 alt="Picture of Rango" /-->
+
         </div>
     </body>
 

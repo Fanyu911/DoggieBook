@@ -8,4 +8,5 @@ app_name = 'doggie'
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
+    path('dogcategory/<slug:dogcategory_name_slug>/',views.show_dogcategory, name='show_dogcategory'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

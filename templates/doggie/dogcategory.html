@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Doggie dogcategory</title>
+    </head>
+
+    <body>
+        <div>
+        {% if dogcategory %}
+            <h1>{{ dogcategory.name }}</h1>
+            {% if dogs %}
+            <ul>
+                {% for dog in dogs %}
+                <li>{{ dog.dog_name }}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+            <strong>No dogs currently in dogcategory.</strong>
+            {% endif %}
+        {% else %}
+            The specified dogcategory does not exist.
+        {% endif %}
+        </div>
+
+    </body>
+
+</html>
