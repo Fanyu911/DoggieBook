@@ -55,7 +55,7 @@ def add_dogcategory(request):
         form = DogCategoryForm(request.POST)
         if form.is_valid():
             form.save(commit=True)
-            return redirect('/doggie/')
+            return redirect(reverse('doggie:index'))
         else:
             print(form.errors)
     return render(request, 'doggie/add_dogcategory.html', {'form': form})
@@ -66,7 +66,7 @@ def add_dog(request):
         form = DogForm(request.POST,request.FILES)
         if form.is_valid():
             form.save(commit=True)
-            return redirect('/doggie/')
+            return redirect(reverse('doggie:index'))
         else:
             print(form.errors)
     return render(request, 'doggie/add_dog.html', {'form': form})

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{%load staticfiles%}
+<html>
+    <head>
+        <title>
+            Doggie -
+            {% block title_block %}
+               Doggie!
+            {% endblock %}
+        </title>
+    </head>
+    <body>
+
+        <div>
+        {% block body_block %}
+        {% endblock %}
+        </div>
+
+        <hr />
+
+        <div>
+            <ul>
+            <a href="{% url 'doggie:about' %}">About</a><br />
+            <a href="{% url 'doggie:index' %}">Index</a><br />
+            <a href="{% url 'doggie:add_dogcategory' %}">Add a New Category</a><br />
+            <a href="{% url 'doggie:add_dog' %}">Add a New Dog</a><br />
+            </ul>
+        </div>
+
+    </body>
+</html>

@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+{% extends 'doggie/base.html' %}
 {% load staticfiles %}
-<html>
 
-    <head>
-        <title>Dog detail</title>
-    </head>
+{% block title_block %}
+    This a dog
+{% endblock %}
 
+{% block body_block %}
     <body>
         <div>
         {% if dog %}
@@ -21,7 +21,4 @@
                 <strong>No dog!</strong>
         {% endif %}
         </div>
-
-    </body>
-
-</html>
+{% endblock %}

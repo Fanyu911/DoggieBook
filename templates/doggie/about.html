@@ -1,25 +1,16 @@
-<!DOCTYPE html>
+{% extends 'doggie/base.html' %}
 {% load staticfiles %}
 
-<html>
+{% block title_block %}
+    About Doggie
+{% endblock %}
 
-    <head>
-     <title>Title</title>
-    </head>
-
-    <body>
+{% block body_block %}
         <h1>Rango says...</h1>
         <div>
             hey there partner! <br />
             here is the about page.<br />
-            This tutorial has been put together by Fanyu Ye<br />
+            This tutorial has been put together by <br />
         </div>
 
-      <div>
-            <a href="/doggie/">Index</a><br />
-
-      </div>
-
-    </body>
-
-</html>
+{% endblock %}

@@ -1,12 +1,11 @@
-<!DOCTYPE html>
+{% extends 'doggie/base.html' %}
 {% load staticfiles %}
-<html>
 
-    <head>
-        <title>Doggie dogcategory</title>
-    </head>
+{% block title_block %}
+    This a dogcategory
+{% endblock %}
 
-    <body>
+{% block body_block %}
         <div>
         {% if dogcategory %}
             <h1>{{ dogcategory.name }}</h1>
@@ -25,7 +24,5 @@
             The specified dogcategory does not exist.
         {% endif %}
         </div>
-        <a href="/doggie/">Index</a>
-    </body>
 
-</html>
+{% endblock %}
