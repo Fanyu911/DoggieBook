@@ -13,7 +13,7 @@ def populate():
          'life_span':'Big Dog',
          'price': 0,'views': 2
          },
-         {'dog_name': 'keji',
+         {'dog_name': 'kffeji',
          'short_description':'keji is here',
          'long_description':'caiquan is here',
          'life_span':'Big Dog',
