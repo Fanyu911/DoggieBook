@@ -18,7 +18,7 @@
         {% if dogcategories %}
         <ul>
         {% for dogcategory in dogcategories %}
-            <li><a href="/doggie/dogcategory/{{ dogcategory.slug }}/">{{ dogcategory.name }}</a></li>
+            <li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a></li>
         {% endfor %}
         </ul>
         {% else %}
