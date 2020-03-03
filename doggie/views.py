@@ -8,8 +8,10 @@ from django.urls import reverse
 from doggie.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from datetime import datetime
 
 def index(request):
+    request.session.set_test_cookie()
 
     dogcategory_list = DogCategory.objects.order_by('-likes')[:5]
     dog_list = Dog.objects.order_by('-views')[:5]
@@ -17,6 +19,9 @@ def index(request):
     context_dict['boldmessage'] = 'Doggie！！！！!'
     context_dict['dogcategories'] = dogcategory_list
     context_dict['dogs'] = dog_list
+
+    visitor_cookie_handler(request)
+    context_dict['visits'] = request.session['visits']
     return render(request, 'doggie/index.html', context=context_dict)
 
 def about(request):
@@ -125,3 +130,24 @@ def user_login(request):
 def user_logout(request):
     logout(request)
     return redirect(reverse('doggie:index'))
+
+def get_server_side_cookie(request, cookie, default_val=None):
+    val = request.session.get(cookie)
+    if not val:
+        val = default_val
+    return val
+
+def visitor_cookie_handler(request):
+    visits = int(get_server_side_cookie(request, 'visits', '1'))
+    last_visit_cookie = get_server_side_cookie(request, 'last_visit', str(datetime.now()) )
+    last_visit_time = datetime.strptime(last_visit_cookie[:-7], "%Y-%m-%d %H:%M:%S")
+
+    if (datetime.now() - last_visit_time).seconds > 0:
+        visits = visits + 1
+
+        request.session['last_visit'] = str(datetime.now())
+    else:
+        visits = 1
+        request.session['last_visit'] = last_visit_cookie
+
+    request.session['visits'] = visits
