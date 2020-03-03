@@ -11,25 +11,6 @@ from doggie.models import DogCategory, Dog
 
 def populate():
     BigDog_pages = [
-<<<<<<< Updated upstream
-        {'dog_name': 'c1111111aiquan',
-         'short_description':'caiquan is here',
-         'long_description':'caiquan is here',
-         'life_span':'Big Dog',
-         'price': 0,'views': 2
-         },
-         {'dog_name': 'kffeji',
-         'short_description':'keji is here',
-         'long_description':'caiquan is here',
-         'life_span':'Big Dog',
-          'price': 0,'views': 2
-          } ]
-    SmallDog_pages =[{'dog_name': 'xiaocaiquan',
-         'short_description':'keji is here',
-         'long_description':'caiquan is here',
-         'life_span':'Small Dog',
-          'price': 0,'views': 2
-=======
         {'dog_name': 'Alaskan Malamute',
          'short_description': 'The Alaskan Malamute is powerful, independent, strong willed, and fun loving.',
          'long_description': 'The breed’s origin is unknown, but was first described living among the native Inuit '
@@ -56,7 +37,7 @@ def populate():
                              'boisterous, but most are eager to please and enjoy learning.',
          'life_span': '10 to 13 years',
          'price': 800, 'views': 2
->>>>>>> Stashed changes
+
          },
         {'dog_name': 'Samoyed',
          'short_description': 'Gentle and playful, the Samoyed often makes a good companion for a child or person of '
@@ -92,7 +73,7 @@ def populate():
                                            'focuses on being a fabulous family friend and show dog. He’s a rare dog '
                                            'breed, so expect to put in some time on a waiting list before you’re able '
                                            'to bring one home.',
-                       'life_span': 'Small Dog',
+                       'life_span': '11 to 14 years',
                        'price': 200, 'views': 2
                        },
                       {'dog_name': 'Border Terrier',
@@ -105,7 +86,7 @@ def populate():
                                            'with other dogs and cats, but not with small animals. They are very good '
                                            'with children and make a good companion for people of all ages. They dig, '
                                            'and some bark. Some are talented escape artists.',
-                       'life_span': 'Small Dog',
+                       'life_span': '12 to 15 years',
                        'price': 500, 'views': 2
                        },
                       {'dog_name': 'Bichon Frise',
@@ -120,7 +101,7 @@ def populate():
                                            'Bichon’s looks and fitness make this sturdy little dog a popular family '
                                            'addition. The soft, inquisitive expression enables this breed to worm its '
                                            'way into many hearts and laps.',
-                       'life_span': 'Small Dog',
+                       'life_span': '12 to 15 years',
                        'price': 500, 'views': 2
                        },
                       {'dog_name': 'Maltese',
@@ -131,33 +112,62 @@ def populate():
                                            'challenge larger dogs, and some enjoy barking. The Maltese is reserved '
                                            'with strangers. The exercise requirements of the Maltese are easily met '
                                            'with indoor games, a romp in the yard, or a short walk on leash.',
-                       'life_span': 'Small Dog',
+                       'life_span': '12 to 14 years',
                        'price': 1000, 'views': 2
                        }]
 
-    MidDog_pages = [{'dog_name': 'xiaocsaiquan',
-                     'short_description': 'keji is here',
-                     'long_description': 'caiquan is here',
-                     'life_span': 'Small Dog',
-                     'price': 0, 'views': 2
+    MidDog_pages = [{'dog_name': 'American Eskimo Dog',
+                     'short_description': 'The American Eskimo is bright, eager to please, lively, and fun loving—in '
+                                          'short, an enjoyable and generally obedient companion. ',
+                     'long_description': 'As the prototypical spitz, the Eskie (as this breed is often called) is '
+                                         'just as often simply called spitz by pet households. True to this dog’s '
+                                         'spitz heritage, The Eskie is independent and tenacious and loves to run, '
+                                         'especially in cold weather. They are among the most biddable of spitz '
+                                         'breeds, and are calm and well-mannered inside. Because of their watchdog '
+                                         'origins, Eskies can be wary of strangers, and may not be the best choice '
+                                         'for homes with small children, other dogs, or pets unless well supervised.',
+                     'life_span': '12 to 14 years',
+                     'price': 600, 'views': 2
                      },
-                    {'dog_name': 'xiaocsaiquan',
-                     'short_description': 'keji is here',
-                     'long_description': 'caiquan is here',
-                     'life_span': 'Small Dog',
-                     'price': 0, 'views': 2
+                    {'dog_name': 'Australian Cattle Dog',
+                     'short_description': 'Smart, hardy, independent, stubborn, tenacious, energetic, and untiring— '
+                                          'these are all traits essential to a driver of headstrong cattle, '
+                                          'and all traits of the Australian Cattle Dog.',
+                     'long_description': 'In 1840, a dog was needed that could withstand traveling long distances '
+                                         'over rough terrain in hot weather and that could control cattle without '
+                                         'barking (which only served to make wild cattle wilder) in Australia. Given '
+                                         'challenging mental and hard physical exercise daily, this breed is among '
+                                         'the most responsive and obedient of dogs. The Cattle Dog tends to nip at '
+                                         'heels of running children, but is good with older children.',
+                     'life_span': '10 to 13 years',
+                     'price': 300, 'views': 2
                      },
-                    {'dog_name': 'xiaocsaiquan',
-                     'short_description': 'keji is here',
-                     'long_description': 'caiquan is here',
-                     'life_span': 'Small Dog',
-                     'price': 0, 'views': 2
+                    {'dog_name': 'Border Collie',
+                     'short_description': 'The Border Collie is a bundle of mental and physical energy awaiting a '
+                                          'chance to be unleashed on the world. ',
+                     'long_description': 'The consummate sheepdog, the Border Collie is the result of over a century '
+                                         'of breeding for function above all other criteria in the 1800s. Among the '
+                                         'most intelligent and obedient of breeds, the BC is nonetheless a disastrous '
+                                         'family member if not given a challenging job every day. Given sufficient '
+                                         'exercise, they are dependable and loyal companions. They are intent on '
+                                         'whatever they do and tend to stare, which can be unnerving to other '
+                                         'animals. They also like to chase other animals. They are reserved, '
+                                         'even protective, toward strangers. Without a job, BCs can be destructive '
+                                         'and can develop harmful, compulsive habits.',
+                     'life_span': '10 to 14 years',
+                     'price': 450, 'views': 2
                      },
-                    {'dog_name': 'xisaokeji',
-                     'short_description': 'keji is here',
-                     'long_description': 'caiquan is here',
-                     'life_span': 'Small Dog',
-                     'price': 0, 'views': 2
+                    {'dog_name': 'Siberian Husky',
+                     'short_description': 'Fun-loving, adventurous, alert, independent, clever, stubborn, '
+                                          'mischievous, and obstinate all describe the Siberian Husky.',
+                     'long_description': 'The Chukchi people of northeast Asia developed the breed now known as the '
+                                         'Siberian Husky. This breed loves to run and will roam if given the chance. '
+                                         'They may be very assertive toward strange dogs, but they are generally good '
+                                         'with other dogs in the home. In fact, they are very social and must have '
+                                         'lots of human or canine companionship. They may chase strange cats or small '
+                                         'pets. Some are likely to howl, dig, and chew.',
+                     'life_span': '11 to 13 years',
+                     'price': 500, 'views': 2
                      }]
 
     cats = {'BigDog': {'dogs': BigDog_pages, 'views': 128, 'likes': 64},
