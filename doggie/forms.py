@@ -1,5 +1,6 @@
 from django import forms
-from doggie.models import DogCategory, Dog
+from doggie.models import DogCategory, Dog, UserProfile
+from django.contrib.auth.models import User
 
 class DogCategoryForm(forms.ModelForm):
     name = forms.CharField(max_length=128,help_text="Please enter the Dogcategory name.")
@@ -24,3 +25,14 @@ class DogForm(forms.ModelForm):
     class Meta:
         model = Dog
         exclude = ('likes','dogcategory_slug','views','slug')
+
+class UserForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput())
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password',)
+
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model = UserProfile
+        fields = ('picture',)

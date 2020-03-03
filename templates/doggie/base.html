@@ -27,10 +27,20 @@
 
         <div>
             <ul>
-            <a href="{% url 'doggie:about' %}">About</a><br />
-            <a href="{% url 'doggie:index' %}">Index</a><br />
+
+        {% if user.is_authenticated %}
             <a href="{% url 'doggie:add_dogcategory' %}">Add a New Category</a><br />
             <a href="{% url 'doggie:add_dog' %}">Add a New Dog</a><br />
+          
+            <li><a href="{% url 'doggie:logout' %}">Logout</a></li>
+        {% else %}
+            <a href="{% url 'doggie:register' %}">Sign Up</a>
+            <a href="{% url 'doggie:login' %}">Login</a>
+        {% endif %}
+
+            <a href="{% url 'doggie:about' %}">About</a><br />
+            <a href="{% url 'doggie:index' %}">Index</a><br />
+
             </ul>
         </div>
 
