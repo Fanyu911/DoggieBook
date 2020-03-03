@@ -11,38 +11,38 @@ def populate():
          'short_description':'caiquan is here',
          'long_description':'caiquan is here',
          'life_span':'Big Dog',
-         'price': 0
+         'price': 0,'views': 2
          },
          {'dog_name': 'keji',
          'short_description':'keji is here',
          'long_description':'caiquan is here',
          'life_span':'Big Dog',
-          'price': 0
+          'price': 0,'views': 2
           } ]
     SmallDog_pages =[{'dog_name': 'xiaocaiquan',
          'short_description':'keji is here',
          'long_description':'caiquan is here',
          'life_span':'Small Dog',
-          'price': 0
+          'price': 0,'views': 2
          },
          {'dog_name': 'xiaokeji',
           'short_description':'keji is here',
          'long_description':'caiquan is here',
          'life_span':'Small Dog',
-         'price': 0
+         'price': 0,'views': 2
          } ]
 
     MidDog_pages =[{'dog_name': 'xiaocsaiquan',
          'short_description':'keji is here',
          'long_description':'caiquan is here',
          'life_span':'Small Dog',
-          'price': 0
+          'price': 0,'views': 2
          },
          {'dog_name': 'xisaokeji',
           'short_description':'keji is here',
          'long_description':'caiquan is here',
          'life_span':'Small Dog',
-         'price': 0
+         'price': 0,'views': 2
          } ]
 
     cats = {'BigDog': {'dogs': BigDog_pages,'views': 128, 'likes': 64},
@@ -52,20 +52,20 @@ def populate():
     for cat ,cat_data in cats.items():
             c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
             for r in cat_data["dogs"]:
-                    add_dog(c,r['dog_name'],r['short_description'],r['long_description'],r['life_span'],r['price'])
+                    add_dog(c,r['dog_name'],r['short_description'],r['long_description'],r['life_span'],r['price'],views=r['views'])
 
     # Print out the categories we have added.
     for c in DogCategory.objects.all():
             for p in Dog.objects.filter(dogcategory=c):
                 print(f'- {c}: {p}')
 
-def add_dog(cat,dog_name,short_description,long_description,life_span,views=0,price=0):
+def add_dog(cat,dog_name,short_description,long_description,life_span,price=0,views=0):
         r = Dog.objects.get_or_create(dogcategory=cat, dog_name=dog_name)[0]
         r.short_description = short_description
         r.long_description = long_description
         r.life_span= life_span
-        r.views=views
         r.price = price
+        r.views=views
         r.save()
         return r
 
