@@ -12,7 +12,5 @@ urlpatterns = [
     path('dogcategory/<slug:dogcategory_name_slug>/<slug:dog_name_slug>/',views.show_dog, name='show_dog'),
     path('add_dogcategory/',views.add_dogcategory,name='add_dogcategory'),
     path('add_dog/', views.add_dog, name='add_dog'),
-    path('register/', views.register, name='register'),
-    path('login/', views.user_login, name='login'),
-    path('logout/', views.user_logout, name='logout'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
