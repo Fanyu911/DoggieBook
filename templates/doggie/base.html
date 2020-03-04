@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {%load staticfiles%}
 {% load doggie_template_tags %}
+
 <html>
     <head>
         <title>
@@ -9,9 +10,14 @@
                Doggie!
             {% endblock %}
         </title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/mystyle.css' %}">
     </head>
-    <body>
 
+    <body>
+        <h1>
+            Hello
+        </h1>
         <div>
         {% block body_block %}
         {% endblock %}

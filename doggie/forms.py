@@ -15,7 +15,7 @@ class DogCategoryForm(forms.ModelForm):
 
 
 class DogForm(forms.ModelForm):
-    dogcategory = forms.ModelChoiceField(queryset=DogCategory.objects.all(), empty_label="Choose category")
+    dogcategory = forms.ModelChoiceField(queryset=DogCategory.objects.all(), empty_label="Choose category",help_text="Select.")
     dog_name = forms.CharField(max_length=128,help_text="Please enter the name of the dog.")
     short_description = forms.CharField(max_length=1280, help_text="Please enter the short description of the dog.")
     long_description = forms.CharField(max_length=1280, help_text="Please enter the long description of the dog.")
