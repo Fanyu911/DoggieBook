@@ -33,7 +33,6 @@ class UserForm(forms.ModelForm):
         fields = ('username', 'email', 'password',)
 
 class UserProfileForm(forms.ModelForm):
-    picture = forms.ImageField(required=False)
     class Meta:
         model = UserProfile
-        fields = ('user',)
+        fields = ('user','picture',)

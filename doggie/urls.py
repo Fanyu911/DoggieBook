@@ -1,7 +1,6 @@
 from django.urls import path
 from doggie import views
-from django.conf import settings
-from django.conf.urls.static import static
+
 
 app_name = 'doggie'
 
@@ -13,4 +12,5 @@ urlpatterns = [
     path('add_dogcategory/',views.add_dogcategory,name='add_dogcategory'),
     path('add_dog/', views.add_dog, name='add_dog'),
     path('register_profile/', views.register_profile, name='register_profile'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('profile/<username>/', views.ProfileView.as_view(), name='profile'),
+]

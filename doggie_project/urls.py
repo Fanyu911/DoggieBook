@@ -19,6 +19,8 @@ from django.urls import include
 from doggie import views
 from registration.backends.simple.views import RegistrationView
 from django.urls import reverse
+from django.conf.urls.static import static
+from django.conf import settings
 
 class MyRegistrationView(RegistrationView):
     def get_success_url(self, user):
@@ -30,4 +32,4 @@ urlpatterns = [
     path('doggie/', include('doggie.urls')),
     path('accounts/register/', MyRegistrationView.as_view(), name='registration_register'),
     path('accounts/', include('registration.backends.simple.urls')),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
