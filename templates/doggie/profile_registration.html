@@ -1,0 +1,16 @@
+{% extends 'doggie/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+    Register - 2
+{% endblock %}
+
+{% block body_block %}
+<h1>Registration - Step 2</h1>
+<form method="post" action="{% url 'doggie:register_profile' %}" enctype="multipart/form-data">
+{% csrf_token %}
+
+{{ form.as_p }}
+<input type="submit" value="Create Profile" />
+</form>
+{% endblock %}
