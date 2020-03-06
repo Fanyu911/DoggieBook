@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block body_block %}
-    <body>
         <div>
         {% if dog %}
             {% for dog in dog %}
@@ -21,4 +20,5 @@
                 <strong>No dog!</strong>
         {% endif %}
         </div>
+        <button onclick="goBack()">Go back</button>
 {% endblock %}
