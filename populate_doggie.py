@@ -217,3 +217,5 @@ if __name__ == '__main__':
 # python populate_doggie.py
 
 # python manage.py runserver
+
+# python manage.py rebuild_index

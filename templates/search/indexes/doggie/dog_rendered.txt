@@ -1,0 +1,3 @@
+<a href="/doggie/dogcategory/{{ object.dogcategory_slug }}/{{object.slug}}/"><h4>{{ object.dog_name}}</h4></a>
+<strong>{{ object.dogcategory }}</strong>
+<p>{{ object.short_description }}</p>

@@ -1,0 +1,6 @@
+{{ object.dog_name }}
+{{ object.short_description }}
+{{ object.long_description }}
+{{ object.life_span }}
+{{ object.price}}
+
