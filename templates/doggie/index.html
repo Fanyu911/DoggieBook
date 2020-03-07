@@ -21,11 +21,15 @@
 
         <div>
             <h2>Select Your Categories</h2>
-            <li><a href="/doggie/dogcategory/bigdog/">BigDog</a></li>
-
-            <li><a href="/doggie/dogcategory/smalldog/">SmallDog</a></li>
-
-            <li><a href="/doggie/dogcategory/middog/">MidDog</a></li>
+        {% if dogcategories %}
+        <ul>
+        {% for dogcategory in dogcategories %}
+            <li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a></li>
+        {% endfor %}
+        </ul>
+        {% else %}
+            <strong>There are no dogcategories present.</strong>
+        {% endif %}
         </div>
 
         <div>
