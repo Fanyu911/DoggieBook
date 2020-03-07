@@ -73,6 +73,7 @@ def add_dogcategory(request):
             print(form.errors)
     return render(request, 'doggie/add_dogcategory.html', {'form': form})
 
+@login_required
 def add_dog(request):
     form = DogForm()
     if request.method == 'POST':

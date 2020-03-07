@@ -24,6 +24,9 @@
             {% else %}
 
             {% endif %}
+            <li><a href="{% url 'auth_password_change' %}">Change your Password</a></li>
+            <a href="{% url 'doggie:add_dogcategory' %}">Add a New Category</a><br />
+            <a href="{% url 'doggie:add_dog' %}">Add a New Dog</a><br />
         </div>
 
 {% endblock %}
