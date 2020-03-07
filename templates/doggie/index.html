@@ -21,12 +21,19 @@
 
         <div>
             <h2>Select Your Categories</h2>
+
         {% if dogcategories %}
-        <ul>
+
         {% for dogcategory in dogcategories %}
-            <li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a></li>
+            {% if dogcategory.slug == 'smalldog' %}
+                <a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a>
+            {% elif dogcategory.slug == 'middog' %}
+                <a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a>
+            {% elif dogcategory.slug == 'bigdog' %}
+                <a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a>
+            {% endif %}
         {% endfor %}
-        </ul>
+
         {% else %}
             <strong>There are no dogcategories present.</strong>
         {% endif %}
