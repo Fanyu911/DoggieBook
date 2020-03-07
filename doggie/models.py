@@ -26,6 +26,7 @@ class Dog(models.Model):
     price = models.IntegerField(default=0)
     views = models.IntegerField(default=0)
     likes = models.IntegerField(default=0)
+    images = models.ImageField(upload_to='dogs_images', null=True, blank=True)
     slug = models.SlugField(unique=True)
     dogcategory_slug = models.SlugField()
 

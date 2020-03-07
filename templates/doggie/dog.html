@@ -9,6 +9,7 @@
         <div>
         {% if dog %}
             {% for dog in dog %}
+            <img src="{{ MEDIA_URL }}{{ dog.images }}" >
             <li>{{ dog.dog_name}}</li>
             <li>{{ dog.short_description}}</li>
             <li>{{ dog.long_description}}</li>
