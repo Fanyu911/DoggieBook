@@ -17,12 +17,12 @@ from django.utils.decorators import method_decorator
 def index(request):
     request.session.set_test_cookie()
 
-    dogcategory_list = DogCategory.objects.order_by('-likes')[:5]
-    dog_list = Dog.objects.order_by('-views')[:5]
+    dogcategory_list = DogCategory.objects.all
+
     context_dict = {}
     context_dict['boldmessage'] = 'Doggie！！！！!'
     context_dict['dogcategories'] = dogcategory_list
-    context_dict['dogs'] = dog_list
+
 
     visitor_cookie_handler(request)
     context_dict['visits'] = request.session['visits']

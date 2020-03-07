@@ -170,15 +170,14 @@ def populate():
                      'price': 500, 'views': 2
                      }]
 
-    cats = {'BigDog': {'dogs': BigDog_pages, 'views': 128, 'likes': 64},
-            'SmallDog': {'dogs': SmallDog_pages, 'views': 12, 'likes': 34},
-            'MidDog': {'dogs': MidDog_pages, 'views': 18, 'likes': 4}}
+    cats = {'BigDog': {'dogs': BigDog_pages },
+            'SmallDog': {'dogs': SmallDog_pages },
+            'MidDog': {'dogs': MidDog_pages }}
 
     for cat, cat_data in cats.items():
-        c = add_cat(cat, views=cat_data['views'], likes=cat_data['likes'])
+        c = add_cat(cat)
         for r in cat_data["dogs"]:
-            add_dog(c, r['dog_name'], r['short_description'], r['long_description'], r['life_span'], r['price'],
-                    views=r['views'])
+            add_dog(c, r['dog_name'], r['short_description'], r['long_description'], r['life_span'], r['price'],r['views'])
 
     # Print out the categories we have added.
     for c in DogCategory.objects.all():
@@ -197,10 +196,9 @@ def add_dog(cat, dog_name, short_description, long_description, life_span, price
     return r
 
 
-def add_cat(name, views=0, likes=0):
+def add_cat(name,views=0):
     c = DogCategory.objects.get_or_create(name=name)[0]
     c.views = views
-    c.likes = likes
     c.save()
     return c
 
