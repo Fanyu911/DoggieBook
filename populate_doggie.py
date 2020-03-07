@@ -127,7 +127,7 @@ def populate():
                                          'origins, Eskies can be wary of strangers, and may not be the best choice '
                                          'for homes with small children, other dogs, or pets unless well supervised.',
                      'life_span': '12 to 14 years',
-                     'price': 600, 'views': 2, 'images': 'American Eskimo.jpg'
+                     'price': 600, 'views': 2, 'images': 'American Eskimo Dog.jpg'
                      },
                     {'dog_name': 'Australian Cattle Dog',
                      'short_description': 'Smart, hardy, independent, stubborn, tenacious, energetic, and untiring— '
@@ -155,7 +155,7 @@ def populate():
                                          'even protective, toward strangers. Without a job, BCs can be destructive '
                                          'and can develop harmful, compulsive habits.',
                      'life_span': '10 to 14 years',
-                     'price': 450, 'views': 2, 'images': 'Border Collie.jpg'
+                     'price': 450, 'views': 2, 'images': 'Border Collie.jpeg'
                      },
                     {'dog_name': 'Siberian Husky',
                      'short_description': 'Fun-loving, adventurous, alert, independent, clever, stubborn, '
