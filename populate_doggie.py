@@ -62,7 +62,7 @@ def populate():
                              'they often run in sweeping circles in an effort to stay on the move. They are '
                              'protective of their home and family.',
          'life_span': '10 to 12 years',
-         'price': 1000, 'views': 2, 'images': 'Belgian Shepherd.jpg'
+         'price': 1000, 'views': 2, 'images': 'Belgian Shepherd : Malinois.jpg'
          }]
     SmallDog_pages = [{'dog_name': 'French Bulldog',
                        'short_description': 'He is a fabulous family friend and show dog.',
@@ -140,7 +140,7 @@ def populate():
                                          'the most responsive and obedient of dogs. The Cattle Dog tends to nip at '
                                          'heels of running children, but is good with older children.',
                      'life_span': '10 to 13 years',
-                     'price': 300, 'views': 2, 'images': 'Australian Cattle.jpg'
+                     'price': 300, 'views': 2, 'images': 'Australian Cattle Dog.jpg'
                      },
                     {'dog_name': 'Border Collie',
                      'short_description': 'The Border Collie is a bundle of mental and physical energy awaiting a '
