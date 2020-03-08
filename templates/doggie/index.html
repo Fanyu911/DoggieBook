@@ -8,39 +8,106 @@
 {% block body_block %}
 
 
-        <p>Visits: {{ visits }}</p>
-        <div>
+
+
+		<!-- Banner -->
+	<section id="banner" >
+		<div class="inner">
+			<h1>HAPPINESS IS A WARM DOG.</h1>
+			 <div style=color:white>
               {% if user.is_authenticated %}
                howdy {{ user.username }}!
              {% else %}
-                 hey there partner!
+                 Hey guest!
              {% endif %}
+<!-- 
              <br />
             <strong>{{ boldmessage }}</strong><br />
+ -->
         </div>
+			 <p style=color:white;"font-size:medium"> We have got {{ visits }} vistors</p>
+			 <div class="search">
+              <input type="email" class="form-control" placeholder="Find a dog breed" aria-label="Find a dog breed" aria-describedby="basic-addon">
+              </div>
+              <br/>
+            
+             <div class="input-group-append">
+                <button class="searchbtn type="button">
+                <a href="/search/">
+                search</a></button>
+              </div>
 
-        <div>
-            <h2>Select Your Categories</h2>
+		</div>
 
-        {% if dogcategories %}
+	</section>
 
-        {% for dogcategory in dogcategories %}
-            {% if dogcategory.slug == 'smalldog' %}
-                <a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a>
-            {% elif dogcategory.slug == 'middog' %}
-                <a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a>
-            {% elif dogcategory.slug == 'bigdog' %}
-                <a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}">{{ dogcategory.name }}</a>
-            {% endif %}
+<!-- Three -->
+
+            <section id="three">
+
+				<div class="inner">
+		 {% if dogcategories %}
+
+        {% for dogcategory in dogcategories %}	
+				 {% if dogcategory.slug == 'smalldog' %}
+					<article>
+						<div class="content">
+                    
+                        <img src="/media/images/icon/hsk.png" alt="small dog" />
+							<header>
+								<h3>small dogs</h3>
+							</header>
+							<p>Small dogs are suitable for living in the city. Most of them are cheerful, lively, docile and lively.</p>
+							<ul class="actions">
+								<li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+					
+
+					
+				  {% elif dogcategory.slug == 'middog' %}
+					<article>
+					 	<div class="content">
+					
+                           <img src="/media/images/icon/gou.png" alt="medium dog" />
+							<header>
+								<h3>medium dogs</h3>
+							</header>
+							<p>The medium sized dogs are gentle with people. Most of them can even help take care of the children.</p>
+							<ul class="actions">
+								<li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}" class="button alt">Learn More</a></li>
+							</ul>
+						</div>
+					</article>
+					
+					 {% elif dogcategory.slug == 'bigdog' %}
+					<article>
+					<div class="content">
+					
+                    <img src="/media/images/icon/jm.png" alt="big dog" />
+							<header>
+								<h3>large dogs</h3>
+							</header>
+							<p>The large sized dogs provide a sense of security and they can guard the house. They have territorial awareness.</p>
+							<ul class="actions">
+								<li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}" class="button alt">Learn More</a></li>
+							</ul>
+					    </div>
+					</article>
+        {% endif %}
         {% endfor %}
 
         {% else %}
             <strong>There are no dogcategories present.</strong>
         {% endif %}
-        </div>
+						</div>
+				</div>
+			</section>
 
-        <div>
+ 
 
-        </div>
+
+
 
 {% endblock %}
