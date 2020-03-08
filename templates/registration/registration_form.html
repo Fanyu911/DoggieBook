@@ -5,7 +5,11 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Register Here</h1>
+<section id="main" >
+<div class="inner">
+
+<h3>Register Here</h3>
+</br>
 <form method="post" action=".">
     {% csrf_token %}
 
@@ -13,4 +17,9 @@
 
     <input type="submit" value="Register" />
 </form>
+
+
+
+</div>
+</section>
 {% endblock %}

@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Login</h1>
+<section id="main" >
+<div class="inner">
+<h3>Login</h3>
+</br>
 
 <form method="post" action=".">
     {% csrf_token %}
@@ -17,6 +20,9 @@
 
 <p>
     Not registered?
-    <a href="{% url 'registration_register' %}">Register here!</a>
+    <a href="{% url 'registration_register' %}" style="color:red">Register here!</a> 
 </p>
+
+</div>
+</section>
 {% endblock %}

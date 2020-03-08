@@ -2249,7 +2249,7 @@
 	select,
 	textarea {
 		background: #ffffff;
-		border-color: #ffffff;
+		border-color: #f2a3a5;
 	}
 
 		input[type="text"]:focus,
@@ -2689,7 +2689,7 @@
 			}
 
 			.wrapper.style1 h1, .wrapper.style1 h2, .wrapper.style1 h3, .wrapper.style1 h4, .wrapper.style1 h5, .wrapper.style1 h6 {
-				color: #4A4A4A;
+				color: #e5474b;
 			}
 
 			.wrapper.style1 blockquote {

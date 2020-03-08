@@ -6,11 +6,18 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>Registration - Step 2</h1>
+
+<section id="main" >
+<div class="inner">
+<h3>Registration - Step 2</h3>
+</br>
 <form method="post" action="{% url 'doggie:register_profile' %}" enctype="multipart/form-data">
 {% csrf_token %}
 
 {{ form.as_p }}
 <input type="submit" value="Create Profile" />
 </form>
+
+</div>
+</section>
 {% endblock %}
