@@ -16,7 +16,7 @@
 			<h1>HAPPINESS IS A WARM DOG.</h1>
 			 <div style=color:white>
               {% if user.is_authenticated %}
-               howdy {{ user.username }}!
+              Welcome! {{ user.username }}!
              {% else %}
                  Hey guest!
              {% endif %}
@@ -27,10 +27,6 @@
         </div>
 			 <p style=color:white;"font-size:medium"> We have got {{ visits }} vistors</p>
 			 <div class="search">
-              <input type="email" class="form-control" placeholder="Find a dog breed" aria-label="Find a dog breed" aria-describedby="basic-addon">
-              </div>
-              <br/>
-            
              <div>
                <br/>
 <!-- 
@@ -108,10 +104,6 @@
 						</div>
 				</div>
 			</section>
-
- 
-
-
 
 
 {% endblock %}
