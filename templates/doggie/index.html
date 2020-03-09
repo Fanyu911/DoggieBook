@@ -14,18 +14,18 @@
 	<section id="banner" >
 		<div class="inner">
 			<h1>HAPPINESS IS A WARM DOG.</h1>
-			 <div style=color:white>
+			 <div>
               {% if user.is_authenticated %}
-           <strong>   Welcome! {{ user.username }}</strong>
+           <strong style="color:#e5474b;font-size:22px" style=margin-bottom:18px>   Welcome! {{ user.username }}</strong>
              {% else %}
-             <strong style="color:white;font-size:22px" style=margin-bottom:18px> Hey guest!</strong>
+             <strong style="color:#e5474b;font-size:22px" style=margin-bottom:18px> Hey guest!</strong>
              {% endif %}
 <!-- 
              <br />
             <strong>{{ boldmessage }}</strong><br />
  -->
         </div>
-			 <p style="color:white;font-size:20px"> We have got {{ visits }} vistors</p>
+			 <p style="color:#d7d7d7;font-size:18px"> We have got {{ visits }} vistors</p>
 			 <div class="search">
              <div>
 <!-- 
@@ -54,7 +54,7 @@
                     
                         <img src="/media/images/icon/hsk.png" alt="small dog" />
 							<header>
-								<h3>small dogs</h3>
+								<h3 style=margin-bottom:10px >small dogs</h3>
 							</header>
 							<p>Small dogs are suitable for living in the city. Most of them are cheerful, lively, docile and lively.</p>
 							<ul class="actions">
@@ -71,7 +71,7 @@
 					
                            <img src="/media/images/icon/gou.png" alt="medium dog" />
 							<header>
-								<h3>medium dogs</h3>
+								<h3 style=margin-bottom:10px>medium dogs</h3>
 							</header>
 							<p>The medium sized dogs are gentle with people. Most of them can even help take care of the children.</p>
 							<ul class="actions">
@@ -86,9 +86,9 @@
 					
                     <img src="/media/images/icon/jm.png" alt="big dog" />
 							<header>
-								<h3>large dogs</h3>
+								<h3 style=margin-bottom:10px>large dogs</h3>
 							</header>
-							<p>The large sized dogs provide a sense of security and they can guard the house. They have territorial awareness.</p>
+							<p>The large sized dogs provide security and they can guard the house. They have territorial awareness.</p>
 							<ul class="actions">
 								<li><a href="{% url 'doggie:show_dogcategory' dogcategory.slug %}" class="button alt">Learn More</a></li>
 							</ul>
