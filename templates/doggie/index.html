@@ -16,25 +16,24 @@
 			<h1>HAPPINESS IS A WARM DOG.</h1>
 			 <div style=color:white>
               {% if user.is_authenticated %}
-              Welcome! {{ user.username }}!
+           <strong>   Welcome! {{ user.username }}</strong>
              {% else %}
-                 Hey guest!
+             <strong style="color:white;font-size:22px" style=margin-bottom:18px> Hey guest!</strong>
              {% endif %}
 <!-- 
              <br />
             <strong>{{ boldmessage }}</strong><br />
  -->
         </div>
-			 <p style=color:white;"font-size:medium"> We have got {{ visits }} vistors</p>
+			 <p style="color:white;font-size:20px"> We have got {{ visits }} vistors</p>
 			 <div class="search">
              <div>
-               <br/>
 <!-- 
                 <button class="searchbtn type="button">
                 <a href="/search/">
                 search</a></button>
  -->
-               <a href="/search/" class="button">search</a>
+               <a href="/search/" class="button" style=margin-bottom:-30px>search</a>
               </div>
 
 		</div>
