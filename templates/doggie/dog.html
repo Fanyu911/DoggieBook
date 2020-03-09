@@ -11,12 +11,12 @@
             {% for dog in dogs %}
             <section id="main" >
 <div class="inner">
-            <img src="{{ MEDIA_URL }}{{ dog.images }}"width="400px" height="400px"> </br>
-            <strong> Dog Name:</strong>  {{ dog.dog_name}} </br>
-            <strong>Dog Short Description:</strong>   {{ dog.short_description}} </br>
-            <strong> Dog Long Description:</strong>  {{ dog.long_description}} </br>
-            <strong> Dog Life Span:</strong>  {{ dog.life_span}} </br>
-            <strong> Dog Price (£):</strong>   {{ dog.price}} </br>
+            <img src="{{ MEDIA_URL }}{{ dog.images }}"width="350px" height="350px"> </br></br>
+            <strong> Dog Name</strong> </br> {{ dog.dog_name}} </br></br>
+            <strong>Dog Short Description</strong> </br>  {{ dog.short_description}} </br></br>
+            <strong> Dog Long Description</strong> </br> {{ dog.long_description}} </br></br>
+            <strong> Dog Life Span</strong> </br> {{ dog.life_span}} </br></br>
+            <strong> Dog Price (£)</strong> </br>  {{ dog.price}} </br></br>
             {% endfor %}
         {% else %}
         <strong>No dog!</strong>
