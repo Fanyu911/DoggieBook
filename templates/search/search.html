@@ -6,7 +6,9 @@
 {% endblock %}
 
 {% block body_block %}
-<h2>Search</h2>
+<section id="main" >
+<div class="inner">
+<h3>Search</h3>
  
    <form role="search" method="get" action=".">
         <div>
@@ -39,5 +41,7 @@
             {# Show some example queries to run, maybe query syntax, something else? #}
         {% endif %}
    </form>
+   </div>
+   </section>
 
 {% endblock %}

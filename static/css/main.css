@@ -323,7 +323,7 @@
 	}
 
 	.row.uniform.\35 0\25 {
-		margin: -1em 0 -1px -1em;
+		margin: -1em 1em -1px -1em;
 	}
 
 	.row.\32 5\25 > * {
@@ -1777,11 +1777,11 @@
 	}
 
 	input, select, textarea {
-		color: #e5474b;
+		color: #4a4a4a !important;
 	}
 
 	a {
-		color: #ffffff;
+		color: #4a4a4a;
 	}
 
 	strong, b {
@@ -1835,6 +1835,7 @@
 	input[type="submit"],
 	input[type="reset"],
 	input[type="button"],
+/* 	input[type="search"], */
 	button,
 	.button {
 		-moz-appearance: none;
@@ -1931,7 +1932,7 @@
 	input[type="button"],
 	button,
 	.button {
-		background-color: #5a5a5a;
+		background-color: #3a3a3a;
 		color: #ffffff !important;
 	}
 
@@ -1988,6 +1989,7 @@
 		input[type="submit"].special,
 		input[type="reset"].special,
 		input[type="button"].special,
+/* 		input[type="search"].special, */
 		button.special,
 		.button.special {
 			background-color: #e5474b;
@@ -2095,7 +2097,7 @@
 		color: #555555;
 		display: block;
 		outline: 0;
-		padding: 0 1em;
+		padding: 0 0.6em;
 		text-decoration: none;
 		width: 400px;
 		
@@ -2246,10 +2248,25 @@
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
+	input[type="search"],
+	input[id="id_q"],
 	select,
 	textarea {
 		background: #ffffff;
-		border-color: #f2a3a5;
+		border-color: #f2a3a5!important; 
+        -moz-appearance: none;
+		-webkit-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		border-radius: 0;
+		border: none;
+		border: solid 3px;
+		color: #4a4a4a;
+		display: block;
+		outline: 0;
+		padding: 0 0.6em;
+		text-decoration: none;
+		width: 400px;
 	}
 
 		input[type="text"]:focus,

@@ -6,9 +6,11 @@
 {% endblock %}
 
 {% block body_block %}
-        <div>
+
         {% if dog %}
             {% for dog in dog %}
+            <section id="main" >
+<div class="inner">
             <img src="{{ MEDIA_URL }}{{ dog.images }}" >
             <li>{{ dog.dog_name}}</li>
             <li>{{ dog.short_description}}</li>
@@ -18,8 +20,10 @@
 
             {% endfor %}
         {% else %}
-                <strong>No dog!</strong>
+        <strong>No dog!</strong>
         {% endif %}
-        </div>
+        </br>
         <button onclick="goBack()">Go back</button>
+        </div>
+        </section>
 {% endblock %}

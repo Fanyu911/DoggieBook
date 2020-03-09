@@ -6,23 +6,27 @@
 {% endblock %}
 
 {% block body_block %}
-        <div>
+            <section id="main" >
+<div class="inner">
         {% if dogcategory %}
-            <h1>{{ dogcategory.name }}</h1>
+            <h3>{{ dogcategory.name }}</h3>
+            </br>
             {% if dogs %}
             <ul>
                 {% for dog in dogs %}
                 <li><a href="/doggie/dogcategory/{{ dogcategory.slug }}/{{ dog.slug }}/">{{ dog.dog_name }}</a></li>
-                <p>{{ dog.short_description }}</p>
+                <p>{{ dog.short_description }}<hr /></p>
                 {% endfor %}
             </ul>
             {% else %}
             <strong>No dogs currently in dogcategory.</strong>
             {% endif %}
-            <a href="/doggie/add_dog/">Add Dog</a> <br />
+            <a href="/doggie/add_dog/" style=color:red> Add Dog</a> <br />
         {% else %}
             The specified dogcategory does not exist.
         {% endif %}
+        <br/>
          <button onclick="goBack()">Go back</button>
         </div>
+        </section>
 {% endblock %}

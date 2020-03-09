@@ -1,14 +1,18 @@
-
+<section id="main" >
+<div class="inner">
 <ul>
 {% if dogcategories %}
     {% for c in dogcategories %}
         {% if c == current_dogcategory %}
-        <li><strong><a href="{% url 'doggie:show_dogcategory' c.slug %}">{{ c.name }}</a></strong></li>
+        <li><strong><a href="{% url 'doggie:show_dogcategory' c.slug %}">{{ c.name }}<hr /></a></strong></li>
         {% else %}
-        <li><a href="{% url 'doggie:show_dogcategory' c.slug %}">{{ c.name }}</a></li>
+        <li><a href="{% url 'doggie:show_dogcategory' c.slug %}">{{ c.name }}<hr /></a></li>
         {% endif %}
     {% endfor %}
 {% else %}
     <li><strong>There are no dogcategories present.</strong></li>
 {% endif %}
 </ul>
+</div>
+</section>
+
