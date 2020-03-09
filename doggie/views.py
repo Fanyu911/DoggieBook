@@ -224,3 +224,19 @@ class ProfileView(View):
                         'form': form}
 
         return render(request, 'doggie/profile.html', context_dict)
+
+
+@login_required
+def like_dog(request):
+    rid = None
+    if request.method == 'GET':
+        rid = request.GET['dog_id']
+    likes = 0
+    if rid:
+        dog = Dog.objects.get(id=int(rid))
+        if dog:
+            likes = dog.likes + 1
+            dog.likes = likes
+            dog.save()
+    return HttpResponse(likes)
+
