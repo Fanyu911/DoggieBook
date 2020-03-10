@@ -188,6 +188,7 @@ def register_profile(request):
 
 
 class ProfileView(View):
+
     def get_user_details(self, username):
         try:
             user = User.objects.get(username=username)
@@ -236,10 +237,11 @@ class ProfileView(View):
 
 @login_required
 @require_POST
-def cmt_add_view(request):
+def cmt_add_view(request,dogcategory_name_slug, dog_name_slug):
+    dogs = Dog.objects.filter(slug=dog_name_slug)
     if request.is_ajax():
         cmt_user = request.user                       #获取评论的用户
-        cmt_dogid = request.POST.get('dog_id')     #获取评论的文章
+        cmt_dogid = dogs.id    #获取评论的文章
         cmt_body = request.POST.get('body')                #获取评论的内容
         dog = Dog.objects.get(id=cmt_dogid)     #获取评论的文章
 
@@ -248,3 +250,21 @@ def cmt_add_view(request):
 
         return JsonResponse({'msg':'评论提交成功！'})
     return JsonResponse({'msg':'评论提交失败！'})
+
+
+@login_required
+def like_dog(request,dogcategory_name_slug, dog_name_slug):
+    rid = None
+
+    dogs = Dog.objects.filter(slug=dog_name_slug)
+    if request.method == 'GET':
+        rid = dogs[0].id
+    likes = 0
+    if rid:
+        dog = Dog.objects.get(id=int(rid))
+        if dog:
+            likes = dog.likes + 1
+            dog.likes = likes
+            dog.save()
+    return HttpResponse(likes)
+

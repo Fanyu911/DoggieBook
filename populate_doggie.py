@@ -10,7 +10,7 @@ from doggie.models import DogCategory, Dog
 
 
 def populate():
-    BigDog_pages = [
+    LargeDog_pages = [
         {'dog_name': 'Alaskan Malamute',
          'short_description': 'The Alaskan Malamute is powerful, independent, strong willed, and fun loving.',
          'long_description': 'The breed’s origin is unknown, but was first described living among the native Inuit '
@@ -116,7 +116,7 @@ def populate():
                        'price': 1000, 'views': 2, 'images': 'Maltese.jpg'
                        }]
 
-    MidDog_pages = [{'dog_name': 'American Eskimo Dog',
+    MediumDog_pages = [{'dog_name': 'American Eskimo Dog',
                      'short_description': 'The American Eskimo is bright, eager to please, lively, and fun loving—in '
                                           'short, an enjoyable and generally obedient companion. ',
                      'long_description': 'As the prototypical spitz, the Eskie (as this breed is often called) is '
@@ -170,9 +170,9 @@ def populate():
                      'price': 500, 'views': 2, 'images': 'Siberian Husky.jpg'
                      }]
 
-    cats = {'BigDog': {'dogs': BigDog_pages },
+    cats = {'LargeDog': {'dogs': LargeDog_pages },
             'SmallDog': {'dogs': SmallDog_pages },
-            'MidDog': {'dogs': MidDog_pages }}
+            'MediumDog': {'dogs': MediumDog_pages }}
 
     for cat, cat_data in cats.items():
         c = add_cat(cat)
