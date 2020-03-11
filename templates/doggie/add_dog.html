@@ -11,7 +11,8 @@
         <h3>Add a Dog </h3>
         <br/>
         <div>
-            <form id="add_dog_form" method="post" action="/doggie/add_dog/">
+        
+            <form id="add_dog_form" method="post" enctype="multipart/form-data" action="/doggie/add_dog/">
                 {% csrf_token %}
                     {% for hidden in form.hidden_fields %}
                         {{ hidden }}
