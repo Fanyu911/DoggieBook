@@ -49,12 +49,12 @@ class UserProfile(models.Model):
 
 
 class Comment(models.Model):
-    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='评论人')
-    body = models.TextField('评论内容')
-    create_date = models.DateTimeField('评论时间', auto_now_add=True)
-    belong = models.ForeignKey(settings.DOG_MODEL, on_delete=models.CASCADE, related_name='dogs_comments', verbose_name='所属文章')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Reviewer')
+    body = models.TextField('Comments Content')
+    create_date = models.DateTimeField('Time', auto_now_add=True)
+    belong = models.ForeignKey(settings.DOG_MODEL, on_delete=models.CASCADE, related_name='dogs_comments', verbose_name='Belongto')
 
     class Meta:
-        verbose_name = '文章评论'
+        verbose_name = 'Comments'
         verbose_name_plural = verbose_name
         ordering = ['create_date']

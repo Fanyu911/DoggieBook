@@ -240,16 +240,16 @@ class ProfileView(View):
 def cmt_add_view(request,dogcategory_name_slug, dog_name_slug):
     dogs = Dog.objects.filter(slug=dog_name_slug)
     if request.is_ajax():
-        cmt_user = request.user                       #获取评论的用户
-        cmt_dogid = dogs.id    #获取评论的文章
-        cmt_body = request.POST.get('body')                #获取评论的内容
-        dog = Dog.objects.get(id=cmt_dogid)     #获取评论的文章
+        cmt_user = request.user
+        cmt_dogid = dogs[0].id
+        cmt_body = request.POST.get('body')
+        dog = Dog.objects.get(id=cmt_dogid)
 
-        comment = Comment(owner=cmt_user, body=cmt_body, belong=dog)  #创建一个新的comment
-        comment.save()            #保存数据
+        comment = Comment(owner=cmt_user, body=cmt_body, belong=dog)
+        comment.save()
 
-        return JsonResponse({'msg':'评论提交成功！'})
-    return JsonResponse({'msg':'评论提交失败！'})
+        return JsonResponse({'msg':'Your review was submitted successfully！'})
+    return JsonResponse({'msg':'Your comment submission failed！'})
 
 
 @login_required

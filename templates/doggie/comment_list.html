@@ -1,10 +1,10 @@
 <section id="main" >
 <div class="inner">
-  <a>评论</a>
+  <strong><a>Comment</a></strong>
 {% for cmt in cmt_list %}
   <a><p><i>({{forloop.counter}}#)&nbsp;&nbsp;&nbsp;</i>{{cmt.owner}}:{{cmt.body}}</p><p>{{cmt.create_date}}</p></a>
 {% empty %}
-<h4>暂时没有评论!</h4>
+<h4>No comment yet!</h4>
 {% endfor %}
 </div>
 
@@ -56,11 +56,12 @@ $(function() {
 {% if user.is_authenticated %}
   <textarea rows="5" cols="100" id="cmt_content"></textarea>
   <br>
-  <button type="button" class="pull-right btn btn-primary"id="cmt_submit" data-csrf="{{ csrf_token }}" data-dog_id="{{dog.id}}" data-ajax_url="dogcategory/<slug:dogcategory_name_slug>/<slug:dog_name_slug>/add/">评论</button>
+  <button type="button" class="pull-right btn btn-primary"id="cmt_submit" onclick="comment()"
+          data-csrf="{{ csrf_token }}" data-dog_id="{{dog.id}}" data-ajax_url="add/">Comment</button>
 {% else %}
-  <div class="text-center">尚未登录，暂时无法评论。请先
-      <a class="text-danger" href="{% url 'auth_login' %}?next={{ request.path }}">登录</a> 或
-      <a class="text-danger" href="{% url 'registration_register' %}?next={{ request.path }}">注册</a>
+  <div class="text-center">You are not logged in and cannot comment right now. Please first
+      <a class="text-danger" href="{% url 'auth_login' %}?next={{ request.path }}">Login</a> or
+      <a class="text-danger" href="{% url 'registration_register' %}?next={{ request.path }}">Register</a>
   </div>
 {% endif %}
   <br><br><br>
