@@ -1,7 +1,7 @@
 function saveLikes() {
-    var rid;
+    var did;
     rid = $(this).attr("data-dogid");
-    $.get('/doggie/like/', {dog_id: rid}, function(data){
+    $.get('like/', {dog_id: did}, function(data){
         $('#like_count').html(data);
         $('#likes').hide();
     });

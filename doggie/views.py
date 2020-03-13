@@ -227,13 +227,15 @@ class ProfileView(View):
 
 
 @login_required
-def like_dog(request):
-    rid = None
+def like_dog(request,dogcategory_name_slug, dog_name_slug):
+    did = None
+
+    dog = Dog.objects.filter(slug=dog_name_slug)
     if request.method == 'GET':
-        rid = request.GET['dog_id']
+        did = dog[0].id
     likes = 0
-    if rid:
-        dog = Dog.objects.get(id=int(rid))
+    if did:
+        dog = Dog.objects.get(id=int(did))
         if dog:
             likes = dog.likes + 1
             dog.likes = likes

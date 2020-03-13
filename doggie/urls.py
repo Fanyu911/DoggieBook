@@ -13,5 +13,5 @@ urlpatterns = [
     path('add_dog/', views.add_dog, name='add_dog'),
     path('register_profile/', views.register_profile, name='register_profile'),
     path('profile/<username>/', views.ProfileView.as_view(), name='profile'),
-    path('like/', views.like_dog, name='like_dog'),
+    path('dogcategory/<slug:dogcategory_name_slug>/<slug:dog_name_slug>/like/', views.like_dog, name='like_dog'),
 ]
