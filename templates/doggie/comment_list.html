@@ -1,0 +1,69 @@
+<section id="main" >
+<div class="inner">
+  <strong><a>Comment</a></strong>
+{% for cmt in cmt_list %}
+  <a><p><i>({{forloop.counter}}#)&nbsp;&nbsp;&nbsp;</i>{{cmt.owner}}:{{cmt.body}}</p><p>{{cmt.create_date}}</p></a>
+{% empty %}
+<h4>No comment yet!</h4>
+{% endfor %}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $("#cmt_submit").click(function(){
+        var body = $("#cmt_content").val();
+        if (body.length == 0){
+            alert("Please enter comment....");
+            return;
+        }
+
+
+        var dog_id = $(this).data('dog_id');
+        var csrf = $(this).data('csrf');
+        var ajax_url = $(this).data('ajax_url')
+
+
+        var post_data={
+        "dog_id":dog_id,
+        "body":body,
+        };
+
+        $.ajaxSetup({
+            data:{'csrfmiddlewaretoken': csrf }
+        });
+
+        $.ajax({
+            url:ajax_url,
+            type:'post',
+            data:post_data,
+
+            success:function (data) {
+                alert(data.msg);
+                window.location.reload();
+            },
+
+            error:function (data) {
+                alert("err"+ data.msg);
+            }
+        });
+    });
+})
+</script>
+
+<div class="inner">
+  <br><br>
+{% if user.is_authenticated %}
+  <textarea rows="5" cols="100" id="cmt_content"></textarea>
+  <br>
+  <button type="button" class="pull-right btn btn-primary"id="cmt_submit" onclick="comment()"
+          data-csrf="{{ csrf_token }}" data-dog_id="{{dog.id}}" data-ajax_url="add/">Comment</button>
+{% else %}
+  <div class="text-center">You are not logged in and cannot comment right now. Please first
+      <a class="text-danger" href="{% url 'auth_login' %}?next={{ request.path }}">Login</a> or
+      <a class="text-danger" href="{% url 'registration_register' %}?next={{ request.path }}">Register</a>
+  </div>
+{% endif %}
+  <br><br><br>
+</div>
+</section>

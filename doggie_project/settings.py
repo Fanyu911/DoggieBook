@@ -150,3 +150,4 @@ REGISTRATION_OPEN = True
 REGISTRATION_AUTO_LOGIN = True
 LOGIN_REDIRECT_URL = 'doggie:index'
 LOGIN_URL = 'auth_login'
+DOG_MODEL = 'doggie.Dog'

@@ -1,16 +1,18 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
+from django.views.decorators.http import require_POST
+
 from doggie.models import DogCategory
 from doggie.models import Dog
 from doggie.forms import DogCategoryForm, DogForm
 from django.shortcuts import redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.urls import reverse
 from doggie.forms import UserForm, UserProfileForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from datetime import datetime
 from django.contrib.auth.models import User
-from doggie.models import UserProfile
+from doggie.models import UserProfile ,Comment
 from django.views import View
 from django.utils.decorators import method_decorator
 
@@ -52,13 +54,21 @@ def show_dog(request,dogcategory_name_slug, dog_name_slug):
 
     try:
 
-        dog = Dog.objects.filter(slug=dog_name_slug)
-        context_dict['dog'] = dog
+        dogs = Dog.objects.filter(slug=dog_name_slug)
+
+
+
+        context_dict['dogs'] = dogs
 
     except Dog.DoesNotExist:
 
-        context_dict['dog'] = None
+        context_dict['dogs'] = None
 
+    dog = get_object_or_404(Dog, slug=dog_name_slug)
+    cmt_list = Comment.objects.filter(belong=dog)
+
+    context_dict['dog'] = dog
+    context_dict['cmt_list'] = cmt_list
     return render(request, 'doggie/dog.html', context=context_dict)
 
 def add_dogcategory(request):
@@ -225,14 +235,30 @@ class ProfileView(View):
 
         return render(request, 'doggie/profile.html', context_dict)
 
+@login_required
+@require_POST
+def cmt_add_view(request,dogcategory_name_slug, dog_name_slug):
+    dogs = Dog.objects.filter(slug=dog_name_slug)
+    if request.is_ajax():
+        cmt_user = request.user
+        cmt_dogid = dogs[0].id
+        cmt_body = request.POST.get('body')
+        dog = Dog.objects.get(id=cmt_dogid)
+
+        comment = Comment(owner=cmt_user, body=cmt_body, belong=dog)
+        comment.save()
+
+        return JsonResponse({'msg':'Your review was submitted successfully！'})
+    return JsonResponse({'msg':'Your comment submission failed！'})
+
 
 @login_required
 def like_dog(request,dogcategory_name_slug, dog_name_slug):
     did = None
-
     dog = Dog.objects.filter(slug=dog_name_slug)
     if request.method == 'GET':
         did = dog[0].id
+
     likes = 0
     if did:
         dog = Dog.objects.get(id=int(did))

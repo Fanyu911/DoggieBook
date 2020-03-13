@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.contrib.auth.models import User
+from django.conf import settings
 # Create your models here.
 class DogCategory(models.Model):
     name = models.CharField(max_length=128, unique=True)
@@ -45,3 +46,15 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class Comment(models.Model):
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='Reviewer')
+    body = models.TextField('Comments Content')
+    create_date = models.DateTimeField('Time', auto_now_add=True)
+    belong = models.ForeignKey(settings.DOG_MODEL, on_delete=models.CASCADE, related_name='dogs_comments', verbose_name='Belongto')
+
+    class Meta:
+        verbose_name = 'Comments'
+        verbose_name_plural = verbose_name
+        ordering = ['create_date']

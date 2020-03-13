@@ -7,8 +7,8 @@
 
 {% block body_block %}
 
-        {% if dog %}
-            {% for dog in dog %}
+        {% if dogs %}
+            {% for dog in dogs %}
             <section id="main" >
 <div class="inner">
             <img src="{{ MEDIA_URL }}{{ dog.images }}"width="350px" height="350px"> </br></br>
@@ -37,5 +37,7 @@
         </br>
         <button onclick="goBack()">Go back</button>
         </div>
+
         </section>
+        {% include 'doggie/comment_list.html'%}
 {% endblock %}

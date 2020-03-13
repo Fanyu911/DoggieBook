@@ -33,4 +33,5 @@ urlpatterns = [
     path('accounts/register/', MyRegistrationView.as_view(), name='registration_register'),
     path('accounts/', include('registration.backends.simple.urls')),
     path('search/',include('haystack.urls')),
+    path('comment/', include('doggie.urls', namespace = 'comment')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
