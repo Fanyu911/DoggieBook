@@ -170,9 +170,9 @@ def populate():
                      'price': 500, 'views': 2, 'images': 'Siberian Husky.jpg'
                      }]
 
-    cats = {'LargeDog': {'dogs': LargeDog_pages },
-            'SmallDog': {'dogs': SmallDog_pages },
-            'MediumDog': {'dogs': MediumDog_pages }}
+    cats = {'Large Dog': {'dogs': LargeDog_pages },
+            'Small Dog': {'dogs': SmallDog_pages },
+            'Medium Dog': {'dogs': MediumDog_pages }}
 
     for cat, cat_data in cats.items():
         c = add_cat(cat)

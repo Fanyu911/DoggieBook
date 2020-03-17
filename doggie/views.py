@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.http import require_POST
-
 from doggie.models import DogCategory
 from doggie.models import Dog
 from doggie.forms import DogCategoryForm, DogForm
@@ -55,8 +54,6 @@ def show_dog(request,dogcategory_name_slug, dog_name_slug):
     try:
 
         dogs = Dog.objects.filter(slug=dog_name_slug)
-
-
 
         context_dict['dogs'] = dogs
 
