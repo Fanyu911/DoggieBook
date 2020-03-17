@@ -23,11 +23,12 @@
         <div>
          {% if user.is_authenticated %}
        <button id="likes" data-recipeid="{{dog.id}}"
-                                                class="btn btn-primary btn-sm" onclick="saveLikes()" type="button" >
+                                                class="button alt" onclick="saveLikes()" type="button" >
                                                 <i class="fa fa-thumbs-up"></i>
-                                                        Like
+                                                        &ensp;Like
                                                 </button>
                                                 {% endif %}
+                                                </br>
                                                 <strong id="like_count">{{ dog.likes }}</strong> people like this dog
         </div>
 

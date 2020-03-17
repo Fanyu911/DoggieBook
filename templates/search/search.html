@@ -15,11 +15,11 @@
             {% csrf_token %}
             <br>
             {{form.as_p}}
-            <br>
         </div>
-        <input  type="submit" value="Search">
+        <input  type="submit" value="Search"></br>
 
         {% if query %}
+        </br>
             <h3>Results</h3>
  
             {% for result in page.object_list %}
