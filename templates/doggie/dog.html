@@ -10,14 +10,16 @@
         {% if dogs %}
             {% for dog in dogs %}
             <section id="main" >
+          
 <div class="inner">
+           <div><h3>{{ dog.dog_name}} <h3></div>
+            <div>
             <img src="{{ MEDIA_URL }}{{ dog.images }}"width="350px" height="350px"> </br></br>
             <strong> Dog Name</strong> </br> {{ dog.dog_name}} </br></br>
-            <strong>Dog Short Description</strong> </br>  {{ dog.short_description}} </br></br>
-            <strong> Dog Long Description</strong> </br> {{ dog.long_description}} </br></br>
-            <strong> Dog Life Span</strong> </br> {{ dog.life_span}} </br></br>
-            <strong> Dog Price (£)</strong> </br>  {{ dog.price}} </br></br>
-
+            <strong> Introduction</strong> </br> {{ dog.long_description}} </br></br>
+            <strong> Life Span</strong> </br> {{ dog.life_span}} </br></br>
+            <strong> Price (£)</strong> </br>  {{ dog.price}} </br></br>
+</div>
         <div>
          {% if user.is_authenticated %}
        <button id="likes" data-recipeid="{{dog.id}}"

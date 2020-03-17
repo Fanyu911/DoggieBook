@@ -9,7 +9,7 @@
 <section id="main">
 <div class="inner">
         {% if dogcategory %}
-            <h3>{{ dogcategory.name }}</h3>
+            <h3>{{ dogcategory.name|linebreaksbr }}</h3>
             </br>
             {% if dogs %}
             <ul style=padding:-25px;>

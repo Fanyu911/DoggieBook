@@ -1583,6 +1583,7 @@
 
 /* Type */
 
+
 	body {
 		background-color: #fff;
 		color: #111111;
@@ -1662,7 +1663,7 @@
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 700;
 		line-height: 1.5;
-		margin: 0.5em 0 0 0;
+		margin: 0.5em 0 0.5em 0;
 		text-transform: uppercase;
 	}
 
@@ -2025,7 +2026,7 @@
 			form .field.half {
 				width: 50%;
 				float: left;
-				padding: 0 0 0 1em;
+				padding: 0 0 0 2em;
 			}
 
 				form .field.half.first {
@@ -2081,6 +2082,12 @@
 	.banner .search{
 	padding-left: 30px;
 	}
+    
+    input[type="file"]{
+    padding: 1 0.6em;
+    margin: 1em 0em 0em 0em;
+    }
+
 
 	input[type="text"],
 	input[type="password"],
@@ -2154,7 +2161,11 @@
 		padding: 0.75em 1em;
 	}
 
-
+    .id_price{
+    padding:1em 1em;
+    clear:right;
+    }
+    
 
 
 	input[type="checkbox"],
@@ -2244,7 +2255,8 @@
 	label {
 		color: #e5474b;
 	}
-
+	
+    input[type="number"],
 	input[type="text"],
 	input[type="password"],
 	input[type="email"],
@@ -2575,7 +2587,7 @@
 
 	header h3 + p {
 		font-size: 1.1em;
-		margin-top: -0.8em;
+		margin-top: -10em;
 	}
 
 	header h4 + p,
@@ -3989,8 +4001,11 @@
 			}
 
 		}
-	
-
+	.greeting{
+       color:#e5474b;
+       font-size:22px;
+       margin-bottom:18px;
+      }
 		
 	.flex {
 		display: -ms-flexbox;
@@ -4090,5 +4105,7 @@
 			.flex.flex-4 .box {
 				width: 100%;
 			}
+			
+			
 
 		}
