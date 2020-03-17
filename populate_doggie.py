@@ -219,3 +219,7 @@ if __name__ == '__main__':
 # python manage.py runserver
 
 # python manage.py rebuild_index
+
+# python manage.py test doggie
+
+# pip freeze > requirements.txt
