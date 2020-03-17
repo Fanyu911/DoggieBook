@@ -3353,7 +3353,7 @@
 			transition: color 0.2s ease-in-out;
 			-webkit-tap-highlight-color: transparent;
 			border: 0;
-			color: #484848;
+		    color: #fff;
 			cursor: pointer;
 			display: block;
 			height: 4em;
