@@ -32,6 +32,8 @@ class Dog(models.Model):
     dogcategory_slug = models.SlugField()
 
     def save(self, *args, **kwargs):
+        if self.likes < 0:
+            self.likes = 0
         self.slug = slugify(self.dog_name)
         self.dogcategory_slug = slugify(self.dogcategory)
         super(Dog, self).save(*args, **kwargs)
