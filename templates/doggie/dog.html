@@ -19,7 +19,7 @@
             <strong> Introduction</strong> </br> {{ dog.long_description}} </br></br>
             <strong> Life Span</strong> </br> {{ dog.life_span}} </br></br>
             <strong> Price (£)</strong> </br>  {{ dog.price}} </br></br>
-</div>
+            </div>
         <div>
          {% if user.is_authenticated %}
        <button id="likes" data-recipeid="{{dog.id}}"
@@ -31,16 +31,21 @@
                                                 </br>
                                                 <strong id="like_count">{{ dog.likes }}</strong> people like this dog
         </div>
-
+        
+         <div>
 
             {% endfor %}
         {% else %}
         <strong>No dog!</strong>
         {% endif %}
         </br>
-        <button onclick="goBack()">Go back</button>
+    
         </div>
-
-        </section>
+       
+       
         {% include 'doggie/comment_list.html'%}
+            <button onclick="goBack()">Go back</button>
+        
+        </div>
+             </section>
 {% endblock %}

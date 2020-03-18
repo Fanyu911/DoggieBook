@@ -1,5 +1,5 @@
 <section id="main" >
-<div class="inner">
+<div class="inner" style=margin-left:-2px;>
   <strong><a>Comment</a></strong>
   </br>
 {% for cmt in cmt_list %}
@@ -55,7 +55,7 @@ $(function() {
 })
 </script>
 
-<div class="inner">
+<div class="inner" style=margin-left:-2px;>
 {% if user.is_authenticated %}
   <textarea rows="5" cols="100" id="cmt_content"></textarea>
   <br>
