@@ -22,12 +22,12 @@
             {% else %}
             <strong>No dogs currently in dogcategory.</strong>
             {% endif %}
-            <a href="/doggie/add_dog/" style=color:red> Add Dog</a> <br />
+            <a href="/doggie/add_dog/" class="contentlink"> Add a New Dog</a> <br />
         {% else %}
             The specified dogcategory does not exist.
         {% endif %}
         <br/>
-         <button onclick="goBack()">Go back</button>
+         <button onclick="window.history.back()">Go back</button>
         </div>
         </section>
 {% endblock %}

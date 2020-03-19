@@ -7,6 +7,7 @@
   <h5>{{cmt.owner}}</h5>
   <P>{{cmt.body}}</p>
   <p style="font-size:14px">{{cmt.create_date}}</p></a>
+  <hr>
 {% empty %}
 <p>There is no comment yet. Be the first to say something:)<p>
 {% endfor %}
@@ -62,9 +63,9 @@ $(function() {
   <button type="button alt" id="cmt_submit" onclick="comment()"
           data-csrf="{{ csrf_token }}" data-dog_id="{{dog.id}}" data-ajax_url="add/">Comment</button>
 {% else %}
-  <div class="text-center">You are not logged in and cannot comment right now. Please first
-      <a class="text-danger" href="{% url 'auth_login' %}?next={{ request.path }}">Login</a> or
-      <a class="text-danger" href="{% url 'registration_register' %}?next={{ request.path }}">Register</a>
+  <div>You are not logged in and cannot comment right now. Please first
+      <a class="text-danger contentlink" href="{% url 'auth_login' %}?next={{ request.path }}">Login</a> or
+      <a class="text-danger contentlink" href="{% url 'registration_register' %}?next={{ request.path }}">Register</a>
   </div>
 {% endif %}
   <br><br><br>
