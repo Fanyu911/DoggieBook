@@ -22,7 +22,7 @@ def populate():
                              'people, but may be assertive and should be introduced carefully to new dogs, pets, '
                              'or livestock. Some can be domineering, and tend to dig and howl.',
          'life_span': '10 to 12 years',
-         'price': 400, 'views': 2, 'images': 'Alaskan Malamute.jpg'
+         'price': 400, 'views': 0, 'images': 'Alaskan Malamute.jpg'
          },
         {'dog_name': 'Golden Retriever',
          'short_description': 'Everybody’s friend, the Golden Retrievers are known for their devoted and obedient '
@@ -36,7 +36,7 @@ def populate():
                              'daily physical and mental exercise. Some Goldens may be overly exuberant and '
                              'boisterous, but most are eager to please and enjoy learning.',
          'life_span': '10 to 13 years',
-         'price': 800, 'views': 2, 'images': 'Golden Retriever.jpg'
+         'price': 800, 'views': 0, 'images': 'Golden Retriever.jpg'
 
          },
         {'dog_name': 'Samoyed',
@@ -50,7 +50,7 @@ def populate():
                              'stubborn, but they are willing to please and responsive to their family.  They may tend '
                              'to herd children.',
          'life_span': '10 to 12 years',
-         'price': 2000, 'views': 2, 'images': 'Samoyed.jpg'
+         'price': 2000, 'views': 0, 'images': 'Samoyed.jpg'
          },
         {'dog_name': 'Belgian Shepherd / Malinois',
          'short_description': 'Intense best describes the Belgian Malinois.',
@@ -62,7 +62,7 @@ def populate():
                              'they often run in sweeping circles in an effort to stay on the move. They are '
                              'protective of their home and family.',
          'life_span': '10 to 12 years',
-         'price': 1000, 'views': 2, 'images': 'Belgian Shepherd : Malinois.jpg'
+         'price': 1000, 'views': 0, 'images': 'Belgian Shepherd : Malinois.jpg'
          }]
     SmallDog_pages = [{'dog_name': 'French Bulldog',
                        'short_description': 'He is a fabulous family friend and show dog.',
@@ -74,7 +74,7 @@ def populate():
                                            'breed, so expect to put in some time on a waiting list before you’re able '
                                            'to bring one home.',
                        'life_span': '11 to 14 years',
-                       'price': 200, 'views': 2, 'images': 'French Bulldog.jpg'
+                       'price': 200, 'views': 0, 'images': 'French Bulldog.jpg'
                        },
                       {'dog_name': 'Border Terrier',
                        'short_description': 'The Border is one of the most amiable and tractable of the Terrier group.',
@@ -87,7 +87,7 @@ def populate():
                                            'with children and make a good companion for people of all ages. They dig, '
                                            'and some bark. Some are talented escape artists.',
                        'life_span': '12 to 15 years',
-                       'price': 500, 'views': 2, 'images': 'Border Terrier.jpg'
+                       'price': 500, 'views': 0, 'images': 'Border Terrier.jpg'
                        },
                       {'dog_name': 'Bichon Frise',
                        'short_description': 'kPerky, bouncy, and playful, the Bichon Frise’s happy-go-lucky outlook '
@@ -102,7 +102,7 @@ def populate():
                                            'addition. The soft, inquisitive expression enables this breed to worm its '
                                            'way into many hearts and laps.',
                        'life_span': '12 to 15 years',
-                       'price': 500, 'views': 2, 'images': 'Bichon Frise.jpg'
+                       'price': 500, 'views': 0, 'images': 'Bichon Frise.jpg'
                        },
                       {'dog_name': 'Maltese',
                        'short_description': 'Long a favorite lapdog, the gentle Maltese fills this role admirably.',
@@ -113,7 +113,7 @@ def populate():
                                            'with strangers. The exercise requirements of the Maltese are easily met '
                                            'with indoor games, a romp in the yard, or a short walk on leash.',
                        'life_span': '12 to 14 years',
-                       'price': 1000, 'views': 2, 'images': 'Maltese.jpg'
+                       'price': 1000, 'views': 0, 'images': 'Maltese.jpg'
                        }]
 
     MediumDog_pages = [{'dog_name': 'American Eskimo Dog',
@@ -127,7 +127,7 @@ def populate():
                                          'origins, Eskies can be wary of strangers, and may not be the best choice '
                                          'for homes with small children, other dogs, or pets unless well supervised.',
                      'life_span': '12 to 14 years',
-                     'price': 600, 'views': 2, 'images': 'American Eskimo Dog.jpg'
+                     'price': 600, 'views': 0, 'images': 'American Eskimo Dog.jpg'
                      },
                     {'dog_name': 'Australian Cattle Dog',
                      'short_description': 'Smart, hardy, independent, stubborn, tenacious, energetic, and untiring— '
@@ -140,7 +140,7 @@ def populate():
                                          'the most responsive and obedient of dogs. The Cattle Dog tends to nip at '
                                          'heels of running children, but is good with older children.',
                      'life_span': '10 to 13 years',
-                     'price': 300, 'views': 2, 'images': 'Australian Cattle Dog.jpg'
+                     'price': 300, 'views': 0, 'images': 'Australian Cattle Dog.jpg'
                      },
                     {'dog_name': 'Border Collie',
                      'short_description': 'The Border Collie is a bundle of mental and physical energy awaiting a '
@@ -155,7 +155,7 @@ def populate():
                                          'even protective, toward strangers. Without a job, BCs can be destructive '
                                          'and can develop harmful, compulsive habits.',
                      'life_span': '10 to 14 years',
-                     'price': 450, 'views': 2, 'images': 'Border Collie.jpeg'
+                     'price': 450, 'views': 0, 'images': 'Border Collie.jpeg'
                      },
                     {'dog_name': 'Siberian Husky',
                      'short_description': 'Fun-loving, adventurous, alert, independent, clever, stubborn, '
@@ -167,7 +167,7 @@ def populate():
                                          'lots of human or canine companionship. They may chase strange cats or small '
                                          'pets. Some are likely to howl, dig, and chew.',
                      'life_span': '11 to 13 years',
-                     'price': 500, 'views': 2, 'images': 'Siberian Husky.jpg'
+                     'price': 500, 'views': 0, 'images': 'Siberian Husky.jpg'
                      }]
 
     cats = {'Large Dog': {'dogs': LargeDog_pages },
@@ -214,7 +214,7 @@ if __name__ == '__main__':
 
 # python manage.py createsuperuser
 
-# python populate_doggie.py
+# python populate_script.py
 
 # python manage.py runserver
 
