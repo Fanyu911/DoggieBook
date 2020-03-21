@@ -208,18 +208,4 @@ if __name__ == '__main__':
     print('Starting Doggie population script...')
     populate()
 
-# python manage.py makemigrations doggie
 
-# python manage.py migrate
-
-# python manage.py createsuperuser
-
-# python populate_script.py
-
-# python manage.py runserver
-
-# python manage.py rebuild_index
-
-# python manage.py test doggie
-
-# pip freeze > requirements.txt
