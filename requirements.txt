@@ -4,6 +4,6 @@ Django==2.1.5
 django-haystack==2.8.1
 django-registration-redux==2.2
 olefile==0.46
-Pillow==5.4.1
+Pillow==8.2.0
 pytz==2019.3
 Whoosh==2.7.4
