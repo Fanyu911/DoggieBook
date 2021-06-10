@@ -1,6 +1,6 @@
 certifi==2019.11.28
 coverage==5.0.4
-Django==2.1.5
+Django==2.2.24
 django-haystack==2.8.1
 django-registration-redux==2.2
 olefile==0.46
